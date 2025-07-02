@@ -29,14 +29,14 @@ jobs:
 
       - name: Upload Checkstyle report
         if: always()
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: checkstyle-result
           path: target/checkstyle-result.xml
 
       - name: Upload SpotBugs XML
         if: always()
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: spotbugs-report
           path: target/spotbugs.xml

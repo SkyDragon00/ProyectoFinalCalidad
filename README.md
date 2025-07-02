@@ -15,5 +15,5 @@ mvn clean test
 
 cd C:\Program Files\Java
 
-ejecutar
+ejecutar nuevo
 mvn clean verify site
