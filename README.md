@@ -14,3 +14,6 @@ ejecutar pruebas
 mvn clean test
 
 cd C:\Program Files\Java
+
+ejecutar
+mvn clean verify site
