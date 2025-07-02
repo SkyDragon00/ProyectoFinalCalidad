@@ -43,14 +43,14 @@ jobs:
 
       - name: Upload JaCoCo HTML report
         if: always()
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: jacoco-html-report
           path: target/site/jacoco/index.html
 
       - name: Upload combined site
         if: always()
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: full-site
           path: target/site
