@@ -44,17 +44,14 @@ mvn clean verify site
 
 ## Estructura del Proyecto
 
-src/
-├── main/
-│ └── java/
-│ └── .../
-│ ├── TaskItem.java # Representa una tarea individual
-│ ├── TaskService.java # Lógica para gestionar tareas
-│ ├── Repository.java # Interfaz de almacenamiento de datos
-│ └── InMemoryRepository.java # Implementación en memoria
-├── test/
-│ └── java/
-│ └── .../ # Pruebas unitarias del sistema
+- `src/main/java`: Contiene el código fuente del sistema **TaskManager**.
+  - `TaskItem`: Representa una tarea individual.
+  - `TaskService`: Proporciona lógica para gestionar tareas.
+  - `Repository`: Interfaz para el almacenamiento de datos.
+  - `InMemoryRepository`: Implementación en memoria del repositorio.
+
+- `src/test/java`: Contiene las pruebas unitarias para garantizar la calidad del código.
+
 
 ## Herramientas de Calidad
 
