@@ -65,4 +65,3 @@ Este proyecto utiliza las siguientes herramientas:
 ## Notas Adicionales
 
 - Asegúrate de que tu entorno esté configurado correctamente antes de ejecutar los comandos.
-- Este proyecto está enfocado exclusivamente en el flujo de **TaskManager**. Cualquier código no relacionado ha sido eliminado.
