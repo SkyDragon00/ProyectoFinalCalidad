@@ -23,7 +23,8 @@ public class TaskService {
         if (repo == null) {
             throw new IllegalArgumentException("Repository cannot be null.");
         }
-        this.repo = repo; // Ensure repo is not shared externally
+        // Wrap the repository to ensure encapsulation
+        this.repo = new PrivateRepository<>(repo);
     }
 
     /**
@@ -61,6 +62,32 @@ public class TaskService {
         } else {
             LOGGER.warning("Invalid index: " + index);
             throw new IllegalArgumentException("Índice inválido.");
+        }
+    }
+
+    /**
+     * Private wrapper for the repository to ensure encapsulation.
+     */
+    private static class PrivateRepository<T> implements Repository<T> {
+        private final Repository<T> delegate;
+
+        public PrivateRepository(final Repository<T> delegate) {
+            this.delegate = delegate;
+        }
+
+        @Override
+        public void save(final T entity) {
+            delegate.save(entity);
+        }
+
+        @Override
+        public List<T> findAll() {
+            return delegate.findAll();
+        }
+
+        @Override
+        public void delete(final T entity) {
+            delegate.delete(entity);
         }
     }
 }
