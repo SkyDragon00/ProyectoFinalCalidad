@@ -20,7 +20,10 @@ public class TaskService {
      * @param repo el repositorio a utilizar
      */
     public TaskService(final Repository<TaskItem> repo) {
-        this.repo = repo;
+        if (repo == null) {
+            throw new IllegalArgumentException("Repository cannot be null.");
+        }
+        this.repo = repo; // Ensure repo is not shared externally
     }
 
     /**
