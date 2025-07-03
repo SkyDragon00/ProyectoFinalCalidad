@@ -10,6 +10,7 @@ public class TaskItem {
 
     /**
      * Constructs a new task with the specified description.
+     * 
      * @param description the description of the task
      */
     public TaskItem(final String description) {
@@ -18,6 +19,7 @@ public class TaskItem {
 
     /**
      * Returns the description of the task.
+     * 
      * @return the task description
      */
     public String getDescription() {
@@ -26,6 +28,7 @@ public class TaskItem {
 
     /**
      * Returns the string representation of the task.
+     * 
      * @return the description string
      */
     @Override

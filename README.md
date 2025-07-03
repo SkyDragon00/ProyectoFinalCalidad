@@ -1,19 +1,71 @@
-"# ProyectoFinalCalidad" 
+# Proyecto Final Calidad - TaskManager
 
-Cmabiar a la version 17 para que funcione
-$env:JAVA_HOME="C:\Program Files\Java\jdk-17.0.10"
-$env:Path="$env:JAVA_HOME\bin;$env:Path"
-java -version
+Este proyecto implementa un sistema de gestión de tareas (`TaskManager`) diseñado para organizar y administrar tareas de manera eficiente. Utiliza herramientas de calidad de software como pruebas unitarias, análisis estático y cobertura de código.
 
+## Requisitos
 
-ejecutar lo  de pom
+1. **Java**: Asegúrate de tener instalado Java 17.
+
+   ```powershell
+   $env:JAVA_HOME="C:\Program Files\Java\jdk-17.0.10"
+   $env:Path="$env:JAVA_HOME\bin;$env:Path"
+   java -version
+
+   ```
+
+2. **Maven**:
+   Utiliza **Maven** para construir y ejecutar el proyecto.
+
+## Comandos Principales
+
+### Construcción del Proyecto
+
+Ejecuta el siguiente comando para limpiar y verificar el proyecto:
+
+```bash
 mvn clean verify
+```
 
+### Pruebas Unitarias
 
-ejecutar pruebas
+Para ejecutar las pruebas unitarias:
+
+```bash
 mvn clean test
+```
 
-cd C:\Program Files\Java
+### Generación de Reportes
 
-ejecutar nuevo
+Para generar reportes de calidad y cobertura:
+
+```bash
 mvn clean verify site
+```
+
+## Estructura del Proyecto
+
+src/
+├── main/
+│ └── java/
+│ └── .../
+│ ├── TaskItem.java # Representa una tarea individual
+│ ├── TaskService.java # Lógica para gestionar tareas
+│ ├── Repository.java # Interfaz de almacenamiento de datos
+│ └── InMemoryRepository.java # Implementación en memoria
+├── test/
+│ └── java/
+│ └── .../ # Pruebas unitarias del sistema
+
+## Herramientas de Calidad
+
+Este proyecto utiliza las siguientes herramientas:
+
+- **JUnit 5**: Para pruebas unitarias.
+- **JaCoCo**: Para medir la cobertura de código.
+- **Checkstyle**: Para verificar el estilo del código.
+- **SpotBugs**: Para análisis estático de errores.
+
+## Notas Adicionales
+
+- Asegúrate de que tu entorno esté configurado correctamente antes de ejecutar los comandos.
+- Este proyecto está enfocado exclusivamente en el flujo de **TaskManager**. Cualquier código no relacionado ha sido eliminado.

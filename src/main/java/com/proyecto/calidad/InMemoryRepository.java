@@ -3,13 +3,16 @@ package com.proyecto.calidad;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.logging.Logger;
 
 /**
  * A simple in-memory implementation of the Repository interface.
  * This repository stores entities in a local list.
+ * 
  * @param <T> the type of entities stored in this repository
  */
 public class InMemoryRepository<T> implements Repository<T> {
+    private static final Logger LOGGER = Logger.getLogger(InMemoryRepository.class.getName());
 
     /**
      * Internal list used to store entities.
@@ -31,6 +34,7 @@ public class InMemoryRepository<T> implements Repository<T> {
     @Override
     public void save(final T entity) {
         storage.add(entity);
+        LOGGER.info("Entity saved: " + entity.toString());
     }
 
     /**
@@ -40,6 +44,18 @@ public class InMemoryRepository<T> implements Repository<T> {
      */
     @Override
     public List<T> findAll() {
+        LOGGER.info("Retrieving all entities: " + storage.size() + " entities found.");
         return Collections.unmodifiableList(storage);
+    }
+
+    /**
+     * Deletes the given entity from the repository.
+     *
+     * @param entity the entity to be deleted
+     */
+    @Override
+    public void delete(final T entity) {
+        storage.remove(entity);
+        LOGGER.info("Entity deleted: " + entity.toString());
     }
 }
